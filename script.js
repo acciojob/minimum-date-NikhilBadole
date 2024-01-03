@@ -2,15 +2,17 @@ function minDate(dates) {
   //write you code here
 	const d = new Date(1970,1,1);
 	let ans = Date.parse(dates[0]);
-	let diff = ans-d;
-	for(int i=1;i<dates.length;i++){
+	let diff= ans-d;
+	let idx = 0;
+	for(let i=1;i<dates.length;i++){
 		let currDate = Date.parse(dates[i]);
 		if(currDate-d < diff){
 			diff = currDate-d;
 			ans = currDate;
+			idx = i;
 		}
 	}
-	return ans.toString();
+	return dates[idx];
 }
 
 // Do not change the code
