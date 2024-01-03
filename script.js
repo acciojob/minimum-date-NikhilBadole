@@ -1,5 +1,15 @@
 function minDate(dates) {
   //write you code here
+	const d = new Date(1970,1,1);
+	let ans = dates[0];
+	let diff = ans-d;
+	for(int i=1;i<dates.length;i++){
+		if(dates[i]-d < diff){
+			diff = dates[i]-d;
+			ans = dates[i];
+		}
+	}
+	return ans;
 }
 
 // Do not change the code
